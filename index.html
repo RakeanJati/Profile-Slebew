@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="Assets/images/favicon.svg">
+    <link rel="image_src" href="Assets/images/favicon.svg" />
+    <link rel="apple-touch-icon" href="Assets/images/favicon.svg" />
+    <meta
+      name="description"
+      content="Memorial Album RPL 2 GEN 17 SMK WIKRAMA BOGOR"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
+
+    <!-- Styling CSS -->
+    <link rel="stylesheet" href="Assets/css/home.css" />
+
+    <title>TimeFlies - Slebew</title>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+
+          
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          
+          <div class="navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="menu ms-auto">
+					<a class="nav-link active" href="index.html">Home</a>
+					<a class="nav-link" href="profile.html">Profile</a>
+					
+				</div>
+
+            </div>
+          </div>
+
+        </div>
+    </nav>
+    <!--End Navbar-->
+
+    <!-- App -->
+    <div class="app container">
+        
+        <!-- Intro -->
+        <div class="intro d-flex align-items-center">
+
+            <div class="title">
+                <h1 class="text-fir">Memorial Album</h1>
+                <h2 class="text-sec">Slebew</h2>
+                <a href="profile.html" class="btn-profile">
+                    Lihat Profile
+                </a>
+            </div>
+
+            <div class="image">
+                <img src="Assets/images/17.jpeg" alt="" loading="lazy" style="border-radius: 10px;">
+            </div>
+
+        </div>
+        <!-- End Intro -->
+
+        <!-- About -->
+        <div class="about d-flex mt-5 mb-5">
+
+           
+
+            <div class="desc">
+                <h2 class="text-fir">Our Journey</h2>
+                <p class="text-sec">Three besties—two girls and a guy—living their college life in Bandung like a squad! Between classes, they’re always out exploring, hitting up new cafés, finding hidden gems, and feasting on street food. Different majors, but they’ve got each other's backs, always vibing, laughing, and making memories. This trio’s all about escaping the study grind together, finding adventure in every corner of the city, and just living their best lives.</p>
+            </div>
+
+        </div>
+        <!-- End About -->
+
+        <!-- Banner -->
+        <div class="banner">
+            <div class="wrapperBanner">
+                
+                <div class="textBanner">
+                    <h3>MEET OUR GLORIUS FRIENDSHIP</h3>
+                    <h1>One of the members of the strongest Friendship in the world, Slebew</h1>
+                </div>
+
+                <div class="imagePreview">
+                    <img src="Assets/images/tiga-removebg-preview.png" alt="" loading="lazy">
+                </div>
+
+            </div>
+        </div>
+        <!-- End Banner -->
+
+        <!-- Content -->
+        <div class="content d-flex">
+            
+            <div class="desc">
+                <h2 class="text-fir">PALKOR MULU</h2>
+                <p class="text-sec">Susah bangett ngajak keluar nongkrong bertiga apalagi kalo ngajak lari gapernah jadi</p>
+            </div>
+
+            <div class="image">
+                <img src="Assets/images/18.jpeg" alt="" loading="lazy" style="object-fit: cover; border-radius: 10px;">
+            </div>
+
+        </div>
+        <!-- End Content -->
+
+    </div>
+    <!-- End App -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="text-center text-white">Copyright © 2024 Slebew</p>
+    </footer>
+    <!-- End 
+        Footer -->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets/js/jquery-3.6.0.slim.min.js"></script>
+
+    <!-- Script -->
+    <script>
+
+        //Navbar Mobile Version Toggle triger
+        $(document).ready(function () {
+            $(".navbar-toggler").click(function(){
+                $(".navbar-collapse").toggleClass("showNavbar");
+            });
+        });
+
+        $(document).ready(function () {
+            $(document).on("scroll", onScroll);
+
+            //smoothscroll
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+
+                $('a').each(function () {
+                    $(this).removeClass('active');
+                })
+                $(this).addClass('active');
+
+                var target = this.hash,
+                    menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top+6
+                }, 700, 'swing', function () {
+                    window.location.hash = target;
+                    $(document).on("scroll", onScroll);
+                });
+            });
+        });
+
+        function onScroll(event){
+            var scrollPos = $(document).scrollTop();
+            $('#navbar a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                    $('#navbar ul li a').removeClass("active");
+                    currLink.addClass("active");
+                }
+                else{
+                    currLink.removeClass("active");
+                }
+            });
+        }
+
+    </script>
+    <!-- End Script -->
+
+  </body>
+</html>
